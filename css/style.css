@@ -29,7 +29,7 @@
 }
 
 /* body {
-    display: flex;
+    display: block;
     flex-direction: column;
     align-content: center;
     flex-wrap: wrap;
@@ -123,7 +123,6 @@
 .headline {
     display: flex;
     flex-direction: column;
-    max-width: 542px;
 }
 
 .headline-txt {
@@ -310,4 +309,210 @@
     background-color: #FFFFFF;
     margin: 0 10px;
     transition: .1s;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.explanation {
+    display: flex;
+    flex-direction: column;
+    max-width: 1222px;
+    width: 100%;
+}
+
+.lection-anounce {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 75px;
+}
+.anounce {
+    max-width: 764px;
+}
+
+h2 {
+    color: rgba(49, 49, 49, 1);
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    line-height: 48.6px;
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+.bolder-red {
+    font-weight: 700;
+    color:#F54932;
+}
+
+.conditions {
+    display: flex;
+    justify-content: space-around;
+}
+
+.images-set {
+    max-width: 474px;
+    height: 527px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 0;
+    background: #FFFFFF;
+
+}
+
+.images-set::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url('../images/filter.png');
+    mix-blend-mode: color-burn;
+    z-index: 1;
+}
+
+.base {
+    background-image: url('../images/base_paper.png');
+    background-repeat: no-repeat;
+    width: 437.5px;
+    height: 405.57px;
+    position: relative;
+    display: block;
+}
+
+.money {
+    background-image: url('../images/ussr_money.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 240.58px;
+    height: 121.61px;
+    rotate: 90deg;
+    position: relative;
+    left: 276px;
+}
+
+.grossmeister-star {
+    background-image: url('../images/grossmeister_star.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 528.99px;
+    height: 343.81px;
+    position: relative;
+    top: -233px;
+    right: 58px;
+}
+
+.grossmeister {
+    background-image: url('../images/grossmeister.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 338.63px;
+    height: 340.3px;
+    position: absolute;
+    top: 115px;
+    left: 107px;
+}
+
+.horse-star {
+    background-image: url('../images/horse_star.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 213.6px;
+    height: 245.1px;
+    position: absolute;
+    top: 230px;
+    left: -36px;
+}
+
+.monochrome-horse {
+    background-image: url('../images/monochrome_horse.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 141.64px;
+    height: 158.92px;
+    position: absolute;
+    top: 53px;
+    left: 77px;
+}
+
+.hand-wth-figure {
+    background-image: url('../images/hand_with_figure.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 244.32px;
+    height: 195.9px;
+    position: absolute;
+    top: 263px;
+    left: 175px;
+}
+
+.bait {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.advantages {
+    max-width: 680px;
+}
+
+table {
+    width: 100%;
+}
+
+.table-row {
+    position: relative;
+}
+
+.table-row::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-bottom: 2px solid rgba(208, 208, 208, 1);
+}
+
+
+.table-term {
+    position: relative;
+    font-family: 'Golos-Text_Regular', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: rgba(49, 49, 49, 0.7);
+}
+
+.table-term::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-right: 2px solid rgba(208, 208, 208, 1);
+}
+
+.table-value {
+    position: relative;
+    font-family: 'Golos-Text_SemiBold', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    color: rgba(49, 49, 49, 1);
+    padding: 20px;
+}
+
+.under-table {
+    font-family: 'Golos-Text_Regular', sans-serif;
+    font-size: 20px;
+    color: rgba(48, 87, 162, 1);
 }

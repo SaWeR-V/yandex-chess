@@ -31,4 +31,4 @@ function textInjection() {
     }
 }
 
-infiniteScroll();
+// infiniteScroll();
