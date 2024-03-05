@@ -20,7 +20,7 @@ function infiniteScroll() {
             infiniteScroll();
         }
 
-    }, 1)
+    }, 10)
 
 }
 
