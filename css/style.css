@@ -28,6 +28,11 @@
     src: url('../fonts/Merriweather-Regular.ttf');
 }
 
+@font-face {
+    font-family: 'Merriweather_Bold';
+    src: url('../fonts/Merriweather-Bold.ttf');
+}
+
 /* body {
     display: block;
     flex-direction: column;
@@ -275,11 +280,11 @@
 }
 
 .running-line-container {
-    display: inline-block;
+    /* display: inline-block; */
     position: relative;
     width: 100%;
     overflow: hidden;
-    background-color: #F54932;
+    background-color: rgba(245, 73, 50, 1);
     z-index: 3;
 }
 
@@ -313,8 +318,10 @@
 
 .main-content {
     display: flex;
-    justify-content: center;
-    padding-top: 50px;
+    padding-top: 80px;
+    flex-direction: column;
+    align-content: space-around;
+    flex-wrap: wrap;
 }
 
 .explanation {
@@ -322,6 +329,7 @@
     flex-direction: column;
     max-width: 1222px;
     width: 100%;
+    padding-bottom: 200px;
 }
 
 .lection-anounce {
@@ -329,7 +337,7 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 75px;
+    padding-bottom: 65px;
 }
 .anounce {
     max-width: 764px;
@@ -345,8 +353,9 @@ h2 {
 }
 
 .bolder-red {
+    font-family: 'Merriweather_Bold', serif;
     font-weight: 700;
-    color:#F54932;
+    color:rgba(245, 73, 50, 1);
 }
 
 .conditions {
@@ -382,7 +391,7 @@ h2 {
     background-image: url('../images/base_paper.png');
     background-repeat: no-repeat;
     width: 437.5px;
-    height: 405.57px;
+    height: 445.57px;
     position: relative;
     display: block;
 }
@@ -395,7 +404,8 @@ h2 {
     height: 121.61px;
     rotate: 90deg;
     position: relative;
-    left: 276px;
+    top: 40px;
+    left: 268px;
 }
 
 .grossmeister-star {
@@ -405,8 +415,8 @@ h2 {
     width: 528.99px;
     height: 343.81px;
     position: relative;
-    top: -233px;
-    right: 58px;
+    top: -192px;
+    right: 51px;
 }
 
 .grossmeister {
@@ -417,40 +427,37 @@ h2 {
     height: 340.3px;
     position: absolute;
     top: 115px;
-    left: 107px;
+    left: 101px;
 }
 
 .horse-star {
     background-image: url('../images/horse_star.png');
-    background-size: 100%;
     background-repeat: no-repeat;
-    width: 213.6px;
+    width: 243.6px;
     height: 245.1px;
     position: absolute;
-    top: 230px;
-    left: -36px;
+    top: 255px;
+    left: -40px;
 }
 
 .monochrome-horse {
     background-image: url('../images/monochrome_horse.png');
-    background-size: 100%;
     background-repeat: no-repeat;
-    width: 141.64px;
-    height: 158.92px;
+    width: 160px;
+    height: 168px;
     position: absolute;
-    top: 53px;
+    top: 57px;
     left: 77px;
 }
 
 .hand-wth-figure {
     background-image: url('../images/hand_with_figure.png');
-    background-size: 100%;
     background-repeat: no-repeat;
-    width: 244.32px;
-    height: 195.9px;
+    width: 285px;
+    height: 210px;
     position: absolute;
-    top: 263px;
-    left: 175px;
+    top: 289px;
+    left: 170px;
 }
 
 .bait {
@@ -464,11 +471,12 @@ h2 {
 }
 
 table {
-    width: 100%;
+    /* width: 100%; */
 }
 
 .table-row {
     position: relative;
+    vertical-align: middle;
 }
 
 .table-row::after {
@@ -480,7 +488,6 @@ table {
     left: 0;
     border-bottom: 2px solid rgba(208, 208, 208, 1);
 }
-
 
 .table-term {
     position: relative;
@@ -508,11 +515,289 @@ table {
     font-weight: 600;
     line-height: 24px;
     color: rgba(49, 49, 49, 1);
-    padding: 20px;
+    padding: 12px 90px 15px 10px;
 }
 
-.under-table {
+.old-price {
+    text-decoration: line-through;
+    text-decoration-color: rgba(245, 73, 50, 1);
+    text-decoration-thickness: 2px;
+    /* margin-right: 15px; */
+}
+
+.blue-string {
     font-family: 'Golos-Text_Regular', sans-serif;
     font-size: 20px;
     color: rgba(48, 87, 162, 1);
+}
+
+.development-phases {
+    display: flex;
+    flex-direction: column;
+    max-width: 1222px;
+    padding-bottom: 200px;
+}
+
+.phases-heading-block {
+    display: inline-block;
+    padding-bottom: 52px;
+}
+
+.header-big {
+    max-width: 804px;
+    font-size: 54px;
+    line-height: 64.8px;
+}
+
+.blue-string-phases {
+    display: inline-block;
+    font-family: 'Golos-Text_Regular', sans-serif;
+    font-size: 20px;
+    color: rgba(48, 87, 162, 1);
+    width: 250px;
+    text-transform: none;
+    line-height: normal;
+    margin-left: 8px;
+}
+
+.stages-scheme {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #FFFFFF;
+    position: relative;
+}
+
+.stages-scheme::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('../images/scheme_base_filter.png');
+    mix-blend-mode: color-burn;
+}
+
+.four-blocks-grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc((100% - 414px));
+    flex-direction: row;
+    gap: 20px;
+}
+
+
+.block {
+    position: relative;
+    width: 394px;
+    height: 112px;
+    background-image: url('../images/scheme_base.png');
+}
+
+.last-block, .sixt {
+    min-height: 136px;
+}
+
+.third {
+    min-height: 244px;
+    height: 100%;
+}
+
+.last-block {
+    position: relative;
+    flex-grow: 1;
+}
+
+.number {
+    position: relative;
+    background-color: #FFFFFF;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+
+    font-family: 'Golos-Text_SemiBold', serif;
+    font-size: 20px;
+    line-height: 24px;
+    color: rgba(49, 49, 49, 1);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    top: 20px;
+    left: 20px;
+}
+
+.stage {
+    position: relative;
+    max-width: 299px;
+    font-family: 'Golos-Text_Medium', serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    color: rgba(49, 49, 49, 1);
+    top: -15px;
+    left: 72px;
+}
+
+.last-number {
+    left: 25px;
+}
+
+.last-stage {
+    left: 78px;
+    max-width: 415px;
+}
+
+.airplane {
+    position: relative;
+    background-image: url('../images/airplane.png');
+    width: 376.64px;
+    height: 209.42px;
+    top: -230px;
+    left: 470px;
+}
+
+.players {
+    max-width: 1222px;
+    padding-bottom: 122px;
+    overflow: hidden;
+}
+
+.players-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 60px;
+}
+
+.players-btns-container {
+    display: flex;
+    align-items: center;
+}
+
+.back, .next {
+    background-color: rgba(49, 49, 49, 1);
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.players-counter {
+    margin: 0 14px;
+    font-family: 'Golos-Text_Regular', sans-serif;
+}
+
+.semitransparent {
+    opacity: 0.6;
+}
+
+.back:hover, .next:hover {
+    background-color: rgba(251, 206, 81, 1);
+    cursor: pointer;
+}
+
+.back:disabled, .next:disabled {
+    background-color: rgba(214, 214, 214, 1);
+    cursor: default;
+}
+
+.back::after {
+    content: '';
+    display: block;
+    position: relative;
+    background-image: url('../images/arrow_back.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.next::after {
+    content: '';
+    display: block;
+    position: relative;
+    background-image: url('../images/arrow_next.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 105%;
+    height: 100%;
+}
+
+.players-cards {
+    display: flex;
+    justify-content: space-between;
+    width: 2465px;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.card {
+    display: flex;
+    width: 394px;
+    height: 480px;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.player-name {
+    font-family: 'Golos-Text_SemiBold', sans-serif;
+    color: rgba(49, 49, 49, 1);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28.8px;
+    padding-top: 30px;
+    padding-bottom: 5px;
+}
+
+.rank {
+    font-family: 'Golos-Text_Regular', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: rgba(49, 49, 49, 0.6);
+    padding-bottom: 20px;
+}
+
+.details {
+    width: 113px;
+    height: 35px;
+    border: 1px solid rgba(48, 87, 162, 1);
+    border-radius: 62px;
+    color: rgba(48, 87, 162, 1);
+    font-family: 'Golos-Text_Medium', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.2px;
+    background-color: transparent;
+}
+
+.details:hover {
+    cursor: pointer;
+    background-color: rgba(48, 87, 162, 1);
+    color: #FFFFFF;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    height: 150px;
+    background-color: rgba(233, 222, 212, 1);
+}
+
+.footer-text {
+    padding-top: 40px;
+    max-width: 1222px;
+    font-family: 'Golos-Text_Regular', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    color: rgba(49, 49, 49, 0.6);
 }
