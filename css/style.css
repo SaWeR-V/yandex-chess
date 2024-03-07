@@ -33,12 +33,6 @@
     src: url('../fonts/Merriweather-Bold.ttf');
 }
 
-/* body {
-    display: block;
-    flex-direction: column;
-    align-content: center;
-    flex-wrap: wrap;
-} */
 
 .header-container::before {
     content: '';
@@ -59,6 +53,7 @@
     /* width: 100%; */
     min-height: 700px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     overflow: hidden;
 }
@@ -73,6 +68,7 @@
     flex-direction: column;
     position: relative;
     left: -9px;
+    /* padding-right: 15px; */
     /* width: 50%; */
     /* flex-grow: 1; */
     /* flex-basis: 34%; */
@@ -101,8 +97,8 @@
     background-image: url('../svg/horse_vector.svg');
     background-size: 100%;
     background-repeat: no-repeat;
-    width: 22px;
-    height: 31.18px;
+    width: 23px;
+    height: 30px;
 }
 
 .logo-txt {
@@ -171,6 +167,7 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: .1s;
 }
 
 .donate, .learn-more:hover {
@@ -317,11 +314,9 @@
 }
 
 .main-content {
-    display: flex;
     padding-top: 80px;
-    flex-direction: column;
-    align-content: space-around;
-    flex-wrap: wrap;
+    max-width: 1222px;
+    margin: auto;
 }
 
 .explanation {
@@ -329,16 +324,22 @@
     flex-direction: column;
     max-width: 1222px;
     width: 100%;
-    padding-bottom: 200px;
+    padding-bottom: 158px;
 }
 
 .lection-anounce {
     display: inline-flex;
-    width: 100%;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 65px;
 }
+
+.chess-players {
+    max-width: 394px;
+    width: 100%;
+}
+
 .anounce {
     max-width: 764px;
 }
@@ -360,22 +361,22 @@ h2 {
 
 .conditions {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 
-.images-set {
-    max-width: 474px;
-    height: 527px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.grossmeister {
+    background-image: url(../images/thinking_process.png);
+    background-color: #FFFFFF;
+    max-width: 530px;
+    min-height: 568px;
+    width: 100%;
     position: relative;
-    z-index: 0;
-    background: #FFFFFF;
-
+    top: -30px;
+    left: -30px;
 }
 
-.images-set::after {
+.grossmeister::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -384,86 +385,16 @@ h2 {
     left: 0;
     background: url('../images/filter.png');
     mix-blend-mode: color-burn;
-    z-index: 1;
-}
-
-.base {
-    background-image: url('../images/base_paper.png');
-    background-repeat: no-repeat;
-    width: 437.5px;
-    height: 445.57px;
-    position: relative;
-    display: block;
-}
-
-.money {
-    background-image: url('../images/ussr_money.png');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    width: 240.58px;
-    height: 121.61px;
-    rotate: 90deg;
-    position: relative;
-    top: 40px;
-    left: 268px;
-}
-
-.grossmeister-star {
-    background-image: url('../images/grossmeister_star.png');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    width: 528.99px;
-    height: 343.81px;
-    position: relative;
-    top: -192px;
-    right: 51px;
-}
-
-.grossmeister {
-    background-image: url('../images/grossmeister.png');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    width: 338.63px;
-    height: 340.3px;
-    position: absolute;
-    top: 115px;
-    left: 101px;
-}
-
-.horse-star {
-    background-image: url('../images/horse_star.png');
-    background-repeat: no-repeat;
-    width: 243.6px;
-    height: 245.1px;
-    position: absolute;
-    top: 255px;
-    left: -40px;
-}
-
-.monochrome-horse {
-    background-image: url('../images/monochrome_horse.png');
-    background-repeat: no-repeat;
-    width: 160px;
-    height: 168px;
-    position: absolute;
-    top: 57px;
-    left: 77px;
-}
-
-.hand-wth-figure {
-    background-image: url('../images/hand_with_figure.png');
-    background-repeat: no-repeat;
-    width: 285px;
-    height: 210px;
-    position: absolute;
-    top: 289px;
-    left: 170px;
+    z-index: 1; 
 }
 
 .bait {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    position: relative;
+    left: -20px;
+    top: -34px;
 }
 
 .advantages {
@@ -471,7 +402,8 @@ h2 {
 }
 
 table {
-    /* width: 100%; */
+    position: relative;
+    top: 12px;
 }
 
 .table-row {
@@ -526,6 +458,8 @@ table {
 }
 
 .blue-string {
+    position: relative;
+    top: 25px;
     font-family: 'Golos-Text_Regular', sans-serif;
     font-size: 20px;
     color: rgba(48, 87, 162, 1);
@@ -560,17 +494,15 @@ table {
     margin-left: 8px;
 }
 
-.stages-scheme {
+.scheme-container {
     display: flex;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 20px;
-    background-color: #FFFFFF;
     position: relative;
+    background-color: #FFFFFF;
 }
 
-.stages-scheme::after {
+.scheme-container::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -581,18 +513,27 @@ table {
     mix-blend-mode: color-burn;
 }
 
-.four-blocks-grid {
+.stages-last-blocks {
     display: flex;
-    flex-wrap: wrap;
-    width: calc((100% - 414px));
+    align-items: center;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 20px;
+    background-color: #FFFFFF;
+    position: relative;
 }
 
 
+.five-blocks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
 .block {
     position: relative;
-    width: 394px;
+    max-width: 394px;
+    width: 100%;
     height: 112px;
     background-image: url('../images/scheme_base.png');
 }
@@ -603,12 +544,15 @@ table {
 
 .third {
     min-height: 244px;
-    height: 100%;
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
 }
 
 .last-block {
     position: relative;
-    flex-grow: 1;
+    max-width: 803px;
+    left: 5px;
 }
 
 .number {
@@ -648,17 +592,17 @@ table {
 }
 
 .last-stage {
-    left: 78px;
     max-width: 415px;
 }
 
-.airplane {
-    position: relative;
+.last-block::after {
+    content: '';
+    position: absolute;
     background-image: url('../images/airplane.png');
-    width: 376.64px;
-    height: 209.42px;
-    top: -230px;
-    left: 470px;
+    width: 380px;
+    height: 215px;
+    top: -95px;
+    left: 467px;
 }
 
 .players {
@@ -686,6 +630,7 @@ table {
     height: 44px;
     border-radius: 50%;
     position: relative;
+    transition: .1s;
 }
 
 .players-counter {
@@ -731,20 +676,21 @@ table {
 
 .players-cards {
     display: flex;
-    justify-content: space-between;
-    width: 2465px;
+    justify-content: space-around;
+    width: 2440px;
     flex-wrap: wrap;
     flex-direction: row;
 }
 
 .card {
     display: flex;
-    width: 394px;
+    width: 405px;
     height: 480px;
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
     align-content: center;
+    transition: 1s;
 }
 
 .player-name {
