@@ -41,7 +41,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('../images/mask.png');
+    background-image: url('../images/mask.png');
     z-index: 1;
     mix-blend-mode: color-burn;
 }
@@ -218,6 +218,7 @@
 
 .king {
     background-image: url('../images/king.png');
+    background-repeat: no-repeat;
     position: absolute;
     width: 128.78px;
     height: 265.89px;
@@ -227,6 +228,7 @@
 
 .queen {
     background-image: url('../images/queen.png');
+    background-repeat: no-repeat;
     position: absolute;
     width: 130.16px;
     height: 261.44px;
@@ -328,7 +330,7 @@
 }
 
 .lection-anounce {
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
@@ -367,6 +369,7 @@ h2 {
 
 .grossmeister {
     background-image: url(../images/thinking_process.png);
+    background-repeat: no-repeat;
     background-color: #FFFFFF;
     max-width: 530px;
     min-height: 568px;
@@ -495,11 +498,16 @@ table {
 }
 
 .scheme-container {
-    display: flex;
+    display: grid;
     flex-direction: column;
     gap: 20px;
     position: relative;
     background-color: #FFFFFF;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid {
+    display: contents;
 }
 
 .scheme-container::after {
@@ -513,23 +521,6 @@ table {
     mix-blend-mode: color-burn;
 }
 
-.stages-last-blocks {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px;
-    background-color: #FFFFFF;
-    position: relative;
-}
-
-
-.five-blocks-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
 .block {
     position: relative;
     max-width: 394px;
@@ -539,11 +530,11 @@ table {
 }
 
 .last-block, .sixt {
-    min-height: 136px;
+    height: 136px;
 }
 
 .third {
-    min-height: 244px;
+    height: 244px;
     grid-column-start: 3;
     grid-row-start: 1;
     grid-row-end: 3;
@@ -551,8 +542,11 @@ table {
 
 .last-block {
     position: relative;
+    display: grid;
     max-width: 803px;
     left: 5px;
+    grid-column-start: 2;
+    grid-column-end: 4;
 }
 
 .number {
@@ -613,6 +607,7 @@ table {
 
 .players-heading {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 60px;
@@ -746,4 +741,144 @@ table {
     font-weight: 400;
     line-height: 19.2px;
     color: rgba(49, 49, 49, 0.6);
+}
+
+@media (max-width: 1300px) {
+    .lection-anounce {
+        justify-content: center;
+    }
+
+    .bait {
+        left: 0;
+        top: 0;
+    }
+
+    .scheme-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .block {
+        height: auto;
+    }
+
+    .third, .sixt  {
+        height: auto;
+        max-width: 394px;
+    }
+
+    .players-cards {
+        width: min-content;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .last-block {
+        max-width: 394px;
+    }
+
+    .last-block::after {
+        display: none;
+    }
+
+    .last-stage {
+        max-width: 299px;
+    }
+}
+
+@media (max-width: 375px) {
+    .horse-logo {
+        width: 18.75px;
+        height: 27px;
+    }
+
+    .header-container::before {
+        background-image: url('../images/mask_small.png');
+    }
+
+    .header-block {
+        max-width: 335px;
+        padding-top: 25px;
+    }
+
+    .header-section {
+        left: 0;
+    }
+
+    .logo {
+        padding: 17px 0;
+    }
+
+    .logo-txt {
+        font-size: 14.42px;
+        line-height: 15.57px;
+    }
+
+    .headline-txt {
+        font-size: 36px;
+        line-height: 39.6px;
+    }
+
+    .header-invite {
+        font-size: 18px;
+        line-height: 23.4px;
+    }
+
+    .btns-container {
+        flex-wrap: wrap;
+        gap: 14px;
+        padding-top: 30px;
+    }
+
+    .btn {
+        height: 47px;
+        max-width: 335px;
+        width: 100%;
+    }
+
+    .learn-more {
+        background-color: rgba(255, 255, 255, 0.9);
+        color: rgba(31, 31, 31, 1);
+        border: none;
+    }
+
+    .btn-donate-txt, .btn-learn-more-txt {
+        font-size: 16px;
+        max-width: max-content;
+        font-weight: 500;
+    }
+
+    .header-big {
+        max-width: 335px;
+        font-size: 36px;
+        line-height: 39.6px;
+    }
+
+    .circle {
+        width: 297px;
+        height: 297px;
+        top: -70px;
+        left: -59px;
+    }
+
+    .circle-txt {
+        background-image: url('../images/circle_txt_small.png');
+        width: 320px;
+        top: -30px;
+        left: -27px;
+    }
+
+    .king {
+        background-image: url('../images/king_small.png');
+        top: 128px;
+        left: 32px;
+    }
+
+    .queen {
+        background-image:  url('../images/queen_small.png');
+        top: 85px;
+        left: 192px;
+    }
 }
