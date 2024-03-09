@@ -40,8 +40,8 @@ function textInjection() {
 
 // infiniteScroll();
 
-const back = document.querySelector('.back');
-const next = document.querySelector('.next');
+const back = document.querySelector('.players-back');
+const next = document.querySelector('.players-next');
 const playersCounter = document.querySelector('.players-counter').querySelector('p');
 const players = document.querySelectorAll('.card');
 
@@ -94,7 +94,7 @@ function autoScrollDesktop() {
 };
 
 
-if (window.outerWidth > 1300) {
+if (window.innerWidth > 1300) {
     playersCarousel();
     setInterval(() => autoScrollDesktop(), 4000);
 }
@@ -110,9 +110,75 @@ function scrollToBlock() {
         explanationBlock.scrollIntoView({behavior: "smooth", inline: "start"})
     })
 
-    learnMoreBtn.addEventListener('click', ()=> {
+    learnMoreBtn.addEventListener('click', () => {
         playersBlock.scrollIntoView({behavior: "smooth", inline: "start"})
     })
 }
 
 scrollToBlock();
+
+function mobileLayout() {
+    const anounce = document.querySelector('.anounce');
+    const chessPlayers = document.querySelector('.chess-players');
+    const tableRows = document.querySelectorAll('.table-row');
+    const stages = document.querySelector('.scheme-container');
+
+
+    document.querySelector('.header-invite').innerHTML = `Оплатите взнос на телеграммы<p>для организации Международного васюкинского турнира по шахматам</p>`;
+
+    chessPlayers.remove();
+
+    anounce.innerHTML = `Чтобы поддержать Международный васюкинский турнир <img src="./images/chess_players_small.png" class="chess-players"> посетите лекцию на тему: <span class="bolder-red">«Плодотворная дебютная идея»</span>`;
+    tableRows[2].innerHTML =   `<td class="table-term">Плата за игру:</td>
+                                <td class="table-value">20 коп.</td>`;
+    tableRows[2].classList += ' unique';
+    tableRows[3].innerHTML = `<td class="table-term">Стоимость входных билетов:</td>
+                                <td class="table-value">50 коп.</td>`;
+    document.querySelector('.old-price').textContent = '100 руб. ';
+    document.querySelector('.blue-string').innerHTML = `По всем вопросам обращаться<p>в администрацию к К. Михельсону</p>`;
+
+    stages.innerHTML = `<div class="block">
+                            <div class="number one">1</div>
+                            <p class="stage">Строительство железнодорожной магистрали Москва-Васюки</p>
+                            <div class="number two">2</div>
+                            <p class="stage second-stage">Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов</p>
+                        </div>
+                        <div class="block">
+                            <div class="number">3</div>
+                            <p class="stage">Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет</p>
+                        </div>
+                        <div class="block">
+                            <div class="number">4</div>
+                            <p class="stage">Строительство дворца для турнира</p>
+                            <div class="number">5</div>
+                            <p class="stage">Размещение гаражей для гостевого автотранспорта</p>
+                        </div>
+                        <div class="block">
+                            <div class="number">6</div>
+                            <p class="stage">Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов</p>
+                        </div>
+                        <div class="block">
+                            <div class="number">7</div>
+                            <p class="stage last-stage">Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн</p>
+                        </div>
+                        `;
+    
+    stages.insertAdjacentHTML('afterend', `<div class="stages-toggles">
+                                                <button class="back stage-back" disabled></button>
+                                                <div class="fast_access_btns"></div>
+                                                <button class="next stage-next"></button>
+                                            </div>`);
+
+    const stageBlocks = document.querySelectorAll('.block');
+    const fastAccess = document.querySelector('.fast_access_btns');
+
+    for (let i = 0; i < stageBlocks.length; i++) {                                        
+        fastAccess.insertAdjacentHTML('afterbegin', `<div class="fast_access_stage"></div>`)
+    };
+
+    fastAccess.firstChild.classList.add('stage_selected');
+}   
+
+if (window.innerWidth < 376) {
+    mobileLayout();
+}

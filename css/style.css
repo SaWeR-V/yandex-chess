@@ -251,6 +251,7 @@
 .city-contour {
     position: relative;
     background-image: url('../svg/city_cont.svg');
+    background-repeat: no-repeat;
     max-width: 1605px;
     width: 100%;
     height: 463.82px;
@@ -260,6 +261,7 @@
 
 .pawn {
     background-image: url('../images/pawn.png');
+    background-repeat: no-repeat;
     position: absolute;
     width: 82.61px;
     height: 122.22px;
@@ -270,6 +272,7 @@
 
 .knight {
     background-image: url('../images/knight.png');
+    background-repeat: no-repeat;
     position: absolute;
     width: 190px;
     height: 230.99px;
@@ -359,6 +362,7 @@ h2 {
     font-family: 'Merriweather_Bold', serif;
     font-weight: 700;
     color:rgba(245, 73, 50, 1);
+
 }
 
 .conditions {
@@ -424,6 +428,10 @@ table {
     border-bottom: 2px solid rgba(208, 208, 208, 1);
 }
 
+.last-row::after {
+    display: none;
+}
+
 .table-term {
     position: relative;
     font-family: 'Golos-Text_Regular', sans-serif;
@@ -466,6 +474,7 @@ table {
     font-family: 'Golos-Text_Regular', sans-serif;
     font-size: 20px;
     color: rgba(48, 87, 162, 1);
+    line-height: 21.6px;
 }
 
 .development-phases {
@@ -804,7 +813,7 @@ table {
     }
 
     .header-section {
-        left: 0;
+        left: -7px;
     }
 
     .logo {
@@ -821,9 +830,18 @@ table {
         line-height: 39.6px;
     }
 
+    .headline > .headline-txt:nth-child(2) {
+        position: relative;
+        top: 1px;
+        left: 3px;
+    }
+
     .header-invite {
         font-size: 18px;
         line-height: 23.4px;
+        max-width: 335px;
+        text-align: start;
+        
     }
 
     .btns-container {
@@ -856,6 +874,10 @@ table {
         line-height: 39.6px;
     }
 
+    .graphics {
+        left: 42px;
+    }
+
     .circle {
         width: 297px;
         height: 297px;
@@ -880,5 +902,241 @@ table {
         background-image:  url('../images/queen_small.png');
         top: 85px;
         left: 192px;
+    }
+
+    .city {
+        background-image: url('../images/city_small.png');
+        left: -89px;
+        top: 54px;
+    }
+
+    .city-contour {
+        background-image: url('../images/city_contour_small.png');
+        top: -3px;
+        left: 0px;
+    }
+
+    .pawn {
+        display: none;
+    }
+
+    .knight {
+        background-image: url('../images/knight_small.png');
+        left: 57px;
+        top: 177px;
+    }
+
+    .running-line-container {
+        top: -5px;
+    }
+
+    .running-line {
+        padding: 7px 0;    
+    }
+
+    .running-line-txt {
+        font-size: 16px;
+    }
+
+    .main-content {
+        position: relative;
+        left: 4px;
+        padding-top: 44px;
+        max-width: 375px;
+    }
+
+    .explanation {
+        padding-bottom: 121px;
+    }
+
+    .chess-players {
+        max-width: 335px;
+        padding-top: 24px;
+        padding-bottom: 15px;
+    }
+
+    .anounce {
+        max-width: 336px;
+        font-size: 28px;
+        line-height: 37.8px;
+        position: relative;
+        left: -11px;
+    }
+
+    .conditions {
+        flex-direction: column;
+    }
+
+    .grossmeister {
+        background-image: url('../images/thinking_process_small.png');
+        top: -31px;
+        left: -20px;
+        max-width: 375px;
+        min-height: 402px;
+    }
+
+    .grossmeister::after {
+        background-image: url('../images/filter_small.png');
+    }
+
+    .bait {
+        top: -6px;
+    }
+
+    .advantages {
+        max-width: 285px;
+        font-size: 28px;
+        line-height: 37.8px;
+    }
+
+    .bolder-red {
+        display: block;
+        width: 335px;
+    }
+
+    table {
+        top: 0px;
+        padding-top: 43px;
+        left: -2px;
+    }
+
+    .table-row {
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 34px;
+    }
+
+    .table-row::after {
+        width: 335px;
+        top: -18px;
+    }
+
+    .table-term {
+        padding-bottom: 10px;
+    }
+
+    .unique {
+        padding-bottom: 22px;
+    }
+
+    .unique > .table-value {
+        margin-left: 12px;
+    }
+
+    .table-term::after {
+        display: none;
+    }
+
+    .table-value {
+        padding: 0;
+    }
+
+    .old-price {
+        margin-right: 7px;
+    }
+
+    .blue-string {
+        top: 7px;
+        font-size: 18px;
+    }
+
+    .development-phases {
+        padding-bottom: 149px;
+    }
+
+    .blue-string-phases {
+        margin-left: 0;
+        margin-top: 14px;
+        font-size: 18px;
+        line-height: 21.6px;
+        width: 335px;
+    }
+
+    .scheme-container::before {
+        content: '';
+        position: absolute;
+        display: block;
+        background-image: url('../images/airplane_small.png');
+        background-repeat: no-repeat;
+        max-width: 335px;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        top: -36px;
+    }
+
+    .scheme-container {
+        width: 1836px;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 92px;
+    }
+
+    .scheme-container::after {
+        background-image: url('../images/scheme_base_filter_small.png');
+    }
+
+    .block {
+        max-width: 335px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .stage {
+        font-size: 18px;
+        line-height: 21.6px;
+        max-width: 239px;
+        top: 0;
+    }
+
+    .one {
+        top: 33px
+    }
+
+    .two {
+        top: 27px;
+    }
+
+    .second-stage {
+        top: -6px
+    }
+
+    .stages-toggles {
+        display: flex;
+        align-items: center;
+        margin: 29px 0px 0px 78px;
+    }
+
+    .back, .next {
+        width: 36px;
+        height: 36px;
+    }
+
+    .back::after, .next::after {
+        background-size: 27%;
+    }
+
+    .fast_access_btns {
+        display: flex;
+        justify-content: space-between;
+        width: 74px;
+        height: 10px;
+        padding: 0 17px;
+    }
+
+    .fast_access_stage {
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: rgba(217, 217, 217, 1);
+        cursor: pointer;
+    }
+
+    .stage_selected {
+        background-color: rgba(49, 49, 49, 1);
     }
 }
