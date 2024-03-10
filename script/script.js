@@ -281,6 +281,6 @@ function mobileLayout() {
     stagesToggle();
 }   
 
-if (window.screen.width || window.innerWidth < 376) {
+if (window.screen.width < 376 || window.innerWidth < 376) {
     mobileLayout();
 }
