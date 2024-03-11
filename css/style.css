@@ -67,18 +67,12 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    left: -9px;
-    /* padding-right: 15px; */
-    /* width: 50%; */
-    /* flex-grow: 1; */
-    /* flex-basis: 34%; */
-    /* flex-wrap: wrap;
-    align-content: space-around; */
+    padding-left: -9px;
 }
 
 .graphics {
     position: relative;
-    left: 50px;
+    left: 58px;
 }
 
 .logo {
@@ -112,7 +106,7 @@
     color: rgba(89, 86, 83, 1);
     width: 150px;
     text-transform: uppercase;
-    margin-left: 8px;
+    margin-left: 5px;
 }
 
 .header-block {
@@ -202,7 +196,6 @@
     border-radius: 50%;
     position: relative;
     top: -44px;
-    /* left: -61px; */
     z-index: 0;
 }
 
@@ -243,8 +236,6 @@
     background-image: url(../images/city.png);
     background-repeat: no-repeat;
     width: 1623.5px;
-    /* width: 100%; */
-    /* height: 100%; */
     z-index: 0;
 }
 
@@ -282,7 +273,6 @@
 }
 
 .running-line-container {
-    /* display: inline-block; */
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -320,7 +310,7 @@
 
 .main-content {
     padding-top: 80px;
-    max-width: 1222px;
+    max-width: 1232px;
     margin: auto;
 }
 
@@ -330,6 +320,7 @@
     max-width: 1222px;
     width: 100%;
     padding-bottom: 158px;
+    padding-left: 14px;
 }
 
 .lection-anounce {
@@ -410,7 +401,8 @@ h2 {
 
 table {
     position: relative;
-    top: 12px;
+    top: 13px;
+    left: -3px;
 }
 
 .table-row {
@@ -418,10 +410,26 @@ table {
     vertical-align: middle;
 }
 
+.row-second {
+    top: 3px;
+}
+
+.row-third {
+    top: 6px;
+}
+
+.row-fourth {
+    top: 9px;
+}
+
+.last-row {
+    top: 12px;
+}
+
 .table-row::after {
     content: '';
     position: absolute;
-    width: 100%;
+    width: 705px;
     height: 100%;
     top: 0;
     left: 0;
@@ -445,10 +453,14 @@ table {
     content: '';
     position: absolute;
     width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    height: 56px;
+    top: 12px;
+    left: -4px;
     border-right: 2px solid rgba(208, 208, 208, 1);
+}
+
+.last-row > .table-term::after {
+    height: 48%;
 }
 
 .table-value {
@@ -458,14 +470,14 @@ table {
     font-weight: 600;
     line-height: 24px;
     color: rgba(49, 49, 49, 1);
-    padding: 12px 90px 15px 10px;
+    padding: 12px 85px 15px 10px;
 }
 
 .old-price {
     text-decoration: line-through;
     text-decoration-color: rgba(245, 73, 50, 1);
     text-decoration-thickness: 2px;
-    /* margin-right: 15px; */
+    margin-right: 8px;
 }
 
 .blue-string {
@@ -481,7 +493,8 @@ table {
     display: flex;
     flex-direction: column;
     max-width: 1222px;
-    padding-bottom: 200px;
+    padding-bottom: 202px;
+    padding-left: 14px;
 }
 
 .phases-heading-block {
@@ -578,6 +591,11 @@ table {
     left: 20px;
 }
 
+.three {
+    left: 23px;
+    top: 21px;
+}
+
 .stage {
     position: relative;
     max-width: 299px;
@@ -590,11 +608,16 @@ table {
     left: 72px;
 }
 
+.stage-third {
+    left: 75px;
+}
+
 .last-number {
     left: 25px;
 }
 
 .last-stage {
+    left: 74px;
     max-width: 415px;
 }
 
@@ -609,9 +632,11 @@ table {
 }
 
 .players {
-    max-width: 1222px;
+    position: relative;
+    max-width: 1232px;
     padding-bottom: 122px;
     overflow: hidden;
+    padding-left: 14px;
 }
 
 .players-heading {
@@ -680,15 +705,15 @@ table {
 
 .players-cards {
     display: flex;
-    justify-content: space-around;
-    width: 2440px;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 2464px;
+    flex-wrap: nowrap;
     flex-direction: row;
 }
 
 .card {
     display: flex;
-    width: 405px;
+    width: 396px;
     height: 480px;
     flex-direction: column;
     align-items: center;
@@ -744,6 +769,7 @@ table {
 
 .footer-text {
     padding-top: 40px;
+    padding-left: 18px;
     max-width: 1222px;
     font-family: 'Golos-Text_Regular', sans-serif;
     font-size: 16px;
@@ -777,9 +803,16 @@ table {
         max-width: 394px;
     }
 
+    .players {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .players-cards {
-        width: min-content;
+        width: 70%;
         justify-content: center;
+        flex-wrap: wrap;
     }
 }
 
@@ -1043,9 +1076,9 @@ table {
     }
 
     .development-phases {
-        padding-bottom: 149px;
+        padding-bottom: 121px;
         max-width: 335px;
-        /* overflow: hidden; */
+        overflow: hidden;
         position: relative;
         left: 4px;
     }
@@ -1208,5 +1241,45 @@ table {
 
     .stage_selected:hover {
         background-color: rgba(49, 49, 49, 1);
+    }
+
+    .players {
+        max-width: 375px;
+        padding-bottom: 52px;
+    }
+
+    .players-header{
+        position: relative;
+        left: 4px;
+    }
+
+    .players-heading {
+        padding-bottom: 40px;
+    }
+
+    .players-cards {
+        width: 2200px;
+        flex-wrap: nowrap;
+    }
+
+    .avatar {
+        width: 244px;
+    }
+
+    .card {
+        position: relative;
+        left: -13px;
+    }
+
+    .players-btns-container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        top: -52px;
+        left: -8px;
+    }
+
+    .counter-mobile {
+        letter-spacing: 2px;
     }
 }
