@@ -797,7 +797,7 @@ table {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 480px) {
     .horse-logo {
         width: 18.75px;
         height: 27px;
@@ -1045,7 +1045,7 @@ table {
     .development-phases {
         padding-bottom: 149px;
         max-width: 335px;
-        overflow: hidden;
+        /* overflow: hidden; */
         position: relative;
         left: 4px;
     }
@@ -1076,7 +1076,7 @@ table {
     }
 
     .scheme-container {
-        width: 1836px;
+        width: 1775px;
         flex-wrap: nowrap;
         flex-direction: row;
         justify-content: space-between;
@@ -1098,6 +1098,10 @@ table {
         transition: .3s;
     }
 
+    .first-block {
+        margin-right: 20px;
+    }
+
     .stage {
         font-size: 18px;
         line-height: 21.6px;
@@ -1113,14 +1117,59 @@ table {
         top: 27px;
     }
 
+    .three {
+        top: -7px
+    }
+
+    .four {
+        top: 0;
+    }
+
+    .five {
+        top: -6px;
+    }
+
+    .six {
+        top: -18px;
+    }
+
+    .seven {
+        top: 14px;
+    }
+
     .second-stage {
         top: -6px
+    }
+
+    .third-stage {
+        top: -40px;
+        max-width: 208px;
+    }
+
+    .fourth-stage {
+        top: -33px;
+    }
+
+    .fifth-stage {
+        top: -41px;
+        max-width: 200px;
+    }
+
+    .sixth-stage {
+        top: -51px
+    }
+
+    .last-stage {
+        top: -19px;
     }
 
     .stages-toggles {
         display: flex;
         align-items: center;
-        margin: 29px 0px 0px 78px;
+        margin-top: 27px;
+        max-width: 375px;
+        width: 100%;
+        justify-content: center;
     }
 
     .back, .next {
@@ -1149,7 +1198,15 @@ table {
         cursor: pointer;
     }
 
+    .fast_access_stage:hover {
+        background-color: rgba(150, 150, 150, 1);
+    } 
+
     .stage_selected {
+        background-color: rgba(49, 49, 49, 1);
+    }
+
+    .stage_selected:hover {
         background-color: rgba(49, 49, 49, 1);
     }
 }

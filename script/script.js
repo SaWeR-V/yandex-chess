@@ -94,7 +94,7 @@ function autoScrollDesktop() {
 };
 
 
-if (window.screen.width > 1300) {
+if (window.innerWidth > 1300) {
     playersCarousel();
     setInterval(() => autoScrollDesktop(), 4000);
 }
@@ -137,29 +137,29 @@ function mobileLayout() {
     document.querySelector('.old-price').textContent = '100 руб. ';
     document.querySelector('.blue-string').innerHTML = `По всем вопросам обращаться<p>в администрацию к К. Михельсону</p>`;
 
-    stages.innerHTML = `<div class="block">
+    stages.innerHTML = `<div class="block first-block">
                             <div class="number one">1</div>
                             <p class="stage">Строительство железнодорожной магистрали Москва-Васюки</p>
                             <div class="number two">2</div>
                             <p class="stage second-stage">Открытие фешенебельной гостиницы «Проходная пешка» и других небоскрёбов</p>
                         </div>
                         <div class="block">
-                            <div class="number">3</div>
-                            <p class="stage">Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет</p>
+                            <div class="number three">3</div>
+                            <p class="stage third-stage">Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет</p>
                         </div>
                         <div class="block">
-                            <div class="number">4</div>
-                            <p class="stage">Строительство дворца для турнира</p>
-                            <div class="number">5</div>
-                            <p class="stage">Размещение гаражей для гостевого автотранспорта</p>
+                            <div class="number four">4</div>
+                            <p class="stage fourth-stage">Строительство дворца для турнира</p>
+                            <div class="number five">5</div>
+                            <p class="stage fifth-stage">Размещение гаражей для гостевого автотранспорта</p>
                         </div>
                         <div class="block">
-                            <div class="number">6</div>
-                            <p class="stage">Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов</p>
+                            <div class="number six">6</div>
+                            <p class="stage sixth-stage">Постройка сверхмощной радиостанции<br>для передачи всему миру сенсационных результатов</p>
                         </div>
                         <div class="block">
-                            <div class="number">7</div>
-                            <p class="stage last-stage">Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн</p>
+                            <div class="number seven">7</div>
+                            <p class="stage last-stage">Создание аэропорта «Большие Васюки» <br>с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос<br>и Мельбурн</p>
                         </div>
                         `;
     
@@ -184,7 +184,6 @@ function mobileLayout() {
         let stageCounter = 0;
 
 
-
         const fastAccessBtns = document.querySelectorAll('.fast_access_stage');
         for (let i = 1; i < stageBlocks.length; i++) {
             fastAccessBtns.forEach(btn => {
@@ -197,6 +196,15 @@ function mobileLayout() {
                     stageBlocks.forEach(block => {
                         block.style.transform = `translateX(calc(${-100 * (btn.id - 1)}% - ${40 * (btn.id - 1)}px))`;
                         event.target.classList.add('stage_selected');
+
+                        if (btn.id > 1) {
+                            stageBlocks[0].style.marginRight = 0;
+                            block.style.transform = `translateX(calc(${-100 * (btn.id - 1)}% - ${25 * (btn.id - 1)}px))`;
+                        }
+
+                        else {
+                            stageBlocks[0].style.marginRight = '20px';
+                        }
                     })
     
                     const activeBtn = event.target;
@@ -221,18 +229,18 @@ function mobileLayout() {
         };
 
 
-
-
-
-
-
         const stageNext = document.querySelector('.stage-next');
         const stageBack = document.querySelector('.stage-back');
 
         stageNext.addEventListener('click', () => {
             stageCounter++;
             stageBlocks.forEach(block => {
-                block.style.transform = `translateX(calc(${-100 * stageCounter}% - ${40 * stageCounter}px))`
+                block.style.transform = `translateX(calc(${-100 * stageCounter}% - ${40 * stageCounter}px))`;
+
+                if (stageCounter > 1) {
+                    stageBlocks[0].style.marginRight = 0;
+                    block.style.transform = `translateX(calc(${-100 * stageCounter}% - ${25 * stageCounter}px))`;
+                }
             })
 
             if (stageCounter > 0) {
@@ -254,7 +262,15 @@ function mobileLayout() {
         stageBack.addEventListener('click', () => {
 
             stageBlocks.forEach(block => {
-                block.style.transform = `translateX(calc(${-100 * (stageCounter - 1)}% + ${40 * (stageCounter - 1)}px))`
+                block.style.transform = `translateX(calc(${-100 * (stageCounter - 1)}% - ${40 * (stageCounter - 1)}px))`
+                
+                if (stageCounter > 1) {
+                    block.style.transform = `translateX(calc(${-100 * (stageCounter - 1)}% - ${25 * (stageCounter - 1)}px))`;
+                }
+
+                if (stageCounter === 1) {
+                    stageBlocks[0].style.marginRight = '20px'
+                }
             })
 
             stageCounter--;
@@ -281,6 +297,6 @@ function mobileLayout() {
     stagesToggle();
 }   
 
-if (window.screen.width < 376 || window.innerWidth < 376) {
+if (window.innerWidth <= 480) {
     mobileLayout();
 }
