@@ -1244,6 +1244,7 @@ table {
     }
 
     .players {
+        display: block;
         max-width: 375px;
         padding-bottom: 52px;
     }
