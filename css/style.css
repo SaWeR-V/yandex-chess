@@ -830,7 +830,7 @@ table {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 375px) {
     .horse-logo {
         width: 18.75px;
         height: 27px;

@@ -77,12 +77,12 @@ function scrollToBlock() {
 scrollToBlock();
 
 
-if (window.innerWidth > 768) {
+if (window.innerWidth > 1300) {
     playersCarouselDesktop();
     setInterval(() => autoScrollDesktop(), 4000);
 }
 
-if (window.innerWidth <= 480  || window.screen.width <= 480) {
+if (window.innerWidth <= 375 || window.screen.width <= 375) {
     mobileLayout();
     playersCarouselMobile();
 }
