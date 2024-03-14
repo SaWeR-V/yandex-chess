@@ -82,7 +82,7 @@ if (window.innerWidth > 1300) {
     setInterval(() => autoScrollDesktop(), 4000);
 }
 
-if (window.innerWidth <= 375 || window.screen.width <= 375) {
+if (window.innerWidth <= 390 || window.screen.width <= 390) {
     mobileLayout();
     playersCarouselMobile();
 }

@@ -67,7 +67,6 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    padding-left: -9px;
 }
 
 .graphics {
@@ -312,6 +311,7 @@
     padding-top: 80px;
     max-width: 1232px;
     margin: auto;
+    overflow: hidden;
 }
 
 .explanation {
@@ -862,10 +862,15 @@ table {
     .development-phases {
         width: 100%;
         max-width: 640px;
+        padding-left: 0;
     }
 
     .stages-heading {
         font-size: 42px;
+    }
+
+    .stage, .last-stage {
+        max-width: 275px;
     }
 
     .grossmeister {
@@ -877,7 +882,7 @@ table {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 390px) {
     .horse-logo {
         width: 18.75px;
         height: 27px;
@@ -890,10 +895,6 @@ table {
     .header-block {
         max-width: 335px;
         padding-top: 25px;
-    }
-
-    .header-section {
-        left: -7px;
     }
 
     .logo {
@@ -1020,7 +1021,6 @@ table {
 
     .main-content {
         position: relative;
-        /* left: 4px; */
         padding-top: 44px;
         max-width: 375px;
     }
